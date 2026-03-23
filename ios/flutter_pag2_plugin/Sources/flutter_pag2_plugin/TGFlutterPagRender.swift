@@ -78,7 +78,7 @@ class TGFlutterPagRender: NSObject, FlutterTexture {
         guard let surface = surface, let pixelBuffer = surface.getCVPixelBuffer() else {
             return nil
         }
-        return Unmanaged.passRetained(pixelBuffer)
+        return pixelBuffer.retain()
     }
 
     // MARK: - Setup
@@ -176,8 +176,8 @@ class TGFlutterPagRender: NSObject, FlutterTexture {
     }
 
     func getLayersUnderPoint(_ point: CGPoint) -> [String] {
-        guard let layers = player?.getLayersUnder(point) as? [PAGLayer] else { return [] }
-        return layers.compactMap { $0.layerName }
+        guard let layers = player?.getLayersUnderPoint(point) as? [PAGLayer] else { return [] }
+        return layers.compactMap { $0.layerName() }
     }
 
     @objc private func update() {
