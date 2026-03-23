@@ -1,6 +1,6 @@
 name: flutter_pag2_plugin
 description: A Flutter plugin for rendering Tencent PAG animations on Android (API 24+) and iOS (13.0+), supporting network, asset, and binary data sources.
-version: 1.0.0-alpha.3
+version: 1.0.0-alpha.4
 homepage: https://github.com/cold-storm/flutter_pag2_plugin
 repository: https://github.com/cold-storm/flutter_pag2_plugin
 
